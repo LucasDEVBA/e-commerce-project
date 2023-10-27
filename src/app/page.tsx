@@ -1,10 +1,5 @@
-import { Card } from "@/components/ui/card";
-import Image from "next/image";
+"use client";
 
 export default function Home() {
-  return (
-    <div>
-      <h1 className="text-5xl font-bold">Hello World</h1>
-    </div>
-  );
+  return <div></div>;
 }
