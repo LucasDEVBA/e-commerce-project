@@ -29,10 +29,10 @@ export default async function Home() {
     },
   });
   return (
-    <div>
+    <div className="py-8">
       <PromoBanner
         src={"/Top-Banner01.png"}
-        className="h-auto w-full p-5"
+        className="h-auto w-full px-5"
         alt="Banner Inicial"
       />
 
@@ -80,7 +80,7 @@ export default async function Home() {
 
       <PromoBanner
         src={"/banner06.png"}
-        className="h-auto w-full py-5"
+        className="h-auto w-full pt-5"
         alt="Banner 06"
       />
 

@@ -14,7 +14,7 @@ const Footer = () => {
           © 2023 Duty Free Americas
         </p>
       </div>
-      <div className="flex justify-between px-4">
+      <div className="flex justify-between">
         <p className="text-[0.625rem] font-semibold">
           Desenvolvido utilizando NextJS
         </p>
