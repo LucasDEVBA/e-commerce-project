@@ -94,7 +94,7 @@ const Header = () => {
         </SheetContent>
       </Sheet>
 
-      <Image alt="DUTTY FREE" src={"./logo-dfa.svg"} width={120} height={120} />
+      <Image alt="DUTTY FREE" src={"/logo-dfa.svg"} width={120} height={120} />
 
       <Button size={"icon"} variant={"outline"}>
         <ShoppingCartIcon />
