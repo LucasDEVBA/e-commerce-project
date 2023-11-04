@@ -21,8 +21,17 @@ export default async function Home() {
         alt="Banner Inicial"
       />
       <div className="mt-8">
+        <p className="mb-3 pl-5 font-bold uppercase">Ofertas</p>
         <ProductList products={deals} />
       </div>
+      <Image
+        src={"/Medium-banner02.png"}
+        width={0}
+        height={0}
+        className="h-auto w-full py-5"
+        sizes="100vw"
+        alt="Como comprar conosco"
+      />
     </div>
   );
 }
