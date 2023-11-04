@@ -35,16 +35,19 @@ export default async function Home() {
         className="h-auto w-full p-5"
         alt="Banner Inicial"
       />
+
       <div className="mt-8">
         <SectionTitle>Ofertas</SectionTitle>
 
         <ProductList products={deals} />
       </div>
+
       <PromoBanner
         src={"/Medium-banner02.png"}
         className="h-auto w-full py-5"
         alt="Como comprar conosco"
       />
+
       <div className="grid grid-cols-2 gap-3 px-4">
         <PromoBanner
           src={"/banner03.png"}
@@ -58,6 +61,7 @@ export default async function Home() {
           alt="Como comprar conosco"
         />
       </div>
+
       <div className="mt-8">
         <SectionTitle>Beleza e Cosméticos</SectionTitle>
         <ProductList products={beauty} />
@@ -65,7 +69,7 @@ export default async function Home() {
 
       <PromoBanner
         src={"/banner05.png"}
-        className="h-auto w-full p-5"
+        className="h-auto w-full px-4 py-5"
         alt="Banner 05"
       />
 
