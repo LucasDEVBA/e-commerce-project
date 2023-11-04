@@ -1,6 +1,8 @@
 import Image from "next/image";
 import ProductList from "./components/product-list";
 import { prismaClient } from "@/lib/prisma";
+import SectionTitle from "./components/section-title";
+import PromoBanner from "./components/promo-banner";
 
 export default async function Home() {
   const deals = await prismaClient.product.findMany({
@@ -10,28 +12,75 @@ export default async function Home() {
       },
     },
   });
+
+  const beauty = await prismaClient.product.findMany({
+    where: {
+      category: {
+        slug: "beautyFragrances",
+      },
+    },
+  });
+
+  const eletronics = await prismaClient.product.findMany({
+    where: {
+      category: {
+        slug: "electronics",
+      },
+    },
+  });
   return (
     <div>
-      <Image
+      <PromoBanner
         src={"/Top-Banner01.png"}
-        width={0}
-        height={0}
         className="h-auto w-full p-5"
-        sizes="100vw"
         alt="Banner Inicial"
       />
       <div className="mt-8">
-        <p className="mb-3 pl-5 font-bold uppercase">Ofertas</p>
+        <SectionTitle>Ofertas</SectionTitle>
+
         <ProductList products={deals} />
       </div>
-      <Image
+      <PromoBanner
         src={"/Medium-banner02.png"}
-        width={0}
-        height={0}
         className="h-auto w-full py-5"
-        sizes="100vw"
         alt="Como comprar conosco"
       />
+      <div className="grid grid-cols-2 gap-3 px-4">
+        <PromoBanner
+          src={"/banner03.png"}
+          className="h-auto w-full py-5"
+          alt="Como comprar conosco"
+        />
+
+        <PromoBanner
+          src={"/banner04.png"}
+          className="h-auto w-full py-5"
+          alt="Como comprar conosco"
+        />
+      </div>
+      <div className="mt-8">
+        <SectionTitle>Beleza e Cosméticos</SectionTitle>
+        <ProductList products={beauty} />
+      </div>
+
+      <PromoBanner
+        src={"/banner05.png"}
+        className="h-auto w-full p-5"
+        alt="Banner 05"
+      />
+
+      <div className="mt-8">
+        <SectionTitle>Eletrônicos</SectionTitle>
+        <ProductList products={eletronics} />
+      </div>
+
+      <PromoBanner
+        src={"/banner06.png"}
+        className="h-auto w-full py-5"
+        alt="Banner 06"
+      />
+
+      <PromoBanner src={"/banner07.png"} alt="Banner 07" />
     </div>
   );
 }
