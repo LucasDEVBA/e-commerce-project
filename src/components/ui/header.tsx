@@ -17,10 +17,10 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
+import Link from "next/link";
 
 const Header = () => {
   const { status, data } = useSession();
-
   const handleLoginClick = async () => {
     await signIn();
   };
@@ -78,10 +78,15 @@ const Header = () => {
                 Fazer logout
               </Button>
             )}
-            <Button variant={"outline"} className="w-full justify-start gap-2">
-              <HomeIcon size={16} />
-              Início
-            </Button>
+            <Link href={"/"}>
+              <Button
+                variant={"outline"}
+                className="mt-4 w-full justify-start gap-2"
+              >
+                <HomeIcon size={16} />
+                Início
+              </Button>
+            </Link>{" "}
             <Button variant={"outline"} className="w-full justify-start gap-2">
               <PercentIcon size={16} />
               Ofertas
@@ -90,12 +95,58 @@ const Header = () => {
               <ListOrderedIcon size={16} />
               Catálogo
             </Button>
+            <Link href={"/category/beautyFragrances"}>
+              <Button
+                variant={"outline"}
+                className="mt-4 w-full justify-start gap-2"
+              >
+                Beleza e Fragrâncias
+              </Button>
+            </Link>
+            <Link href={"/category/electronics"}>
+              <Button
+                variant={"outline"}
+                className="mt-4 w-full justify-start gap-2"
+              >
+                Eletrônicos
+              </Button>
+            </Link>
+            <Link href={"/category/wine"}>
+              <Button
+                variant={"outline"}
+                className="mt-4 w-full justify-start gap-2"
+              >
+                Bebidas
+              </Button>
+            </Link>
+            <Link href={"/category/luxury"}>
+              <Button
+                variant={"outline"}
+                className="mt-4 w-full justify-start gap-2"
+              >
+                Luxo
+              </Button>
+            </Link>
+            <Link href={"/category/edibles"}>
+              <Button
+                variant={"outline"}
+                className="mt-4 w-full justify-start gap-2"
+              >
+                Comestíveis
+              </Button>
+            </Link>
           </div>
         </SheetContent>
       </Sheet>
 
-      <Image alt="DUTTY FREE" src={"/logo-dfa.svg"} width={120} height={120} />
-
+      <Link href={"/"}>
+        <Image
+          alt="DUTTY FREE"
+          src={"/logo-dfa.svg"}
+          width={120}
+          height={120}
+        />
+      </Link>
       <Button size={"icon"} variant={"outline"}>
         <ShoppingCartIcon />
       </Button>
