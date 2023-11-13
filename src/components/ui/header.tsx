@@ -18,6 +18,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
 import Link from "next/link";
+import Cart from "./cart";
 
 const Header = () => {
   const { status, data } = useSession();
@@ -147,9 +148,16 @@ const Header = () => {
           height={120}
         />
       </Link>
-      <Button size={"icon"} variant={"outline"}>
-        <ShoppingCartIcon />
-      </Button>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button size={"icon"} variant={"outline"}>
+            <ShoppingCartIcon />
+          </Button>
+        </SheetTrigger>
+        <SheetContent>
+          <Cart />
+        </SheetContent>
+      </Sheet>
     </Card>
   );
 };
