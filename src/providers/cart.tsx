@@ -37,6 +37,7 @@ export const cartContext = createContext<ICartContext>({
 });
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
+  // if it is in development, comment that excerpt of code and descomment of excerpt down
   const [products, setProducts] = useState<CartProduct[]>([]);
 
   useEffect(() => {
@@ -49,6 +50,7 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("@e-commerce/cart-products", JSON.stringify(products));
   }, [products]);
 
+  // if it is in prod, comment that excerpt of code and descomment of excerpt up
   // const [products, setProducts] = useState<CartProduct[]>(
   //   JSON.parse(localStorage.getItem("@e-commerce/cart-products") || "[]"),
   // );
