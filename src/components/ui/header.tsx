@@ -88,10 +88,15 @@ const Header = () => {
                 Início
               </Button>
             </Link>{" "}
-            <Button variant={"outline"} className="w-full justify-start gap-2">
-              <PercentIcon size={16} />
-              Ofertas
-            </Button>
+            <Link href={"/deals"}>
+              <Button
+                variant={"outline"}
+                className="mt-4 w-full justify-start gap-2"
+              >
+                <PercentIcon size={16} />
+                Ofertas
+              </Button>
+            </Link>
             <Button variant={"outline"} className="w-full justify-start gap-2">
               <ListOrderedIcon size={16} />
               Catálogo
