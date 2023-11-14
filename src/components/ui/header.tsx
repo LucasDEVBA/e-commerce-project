@@ -192,6 +192,28 @@ const Header = () => {
             <p className="text-xs font-bold">Salvador (SSA)</p>
           </div>
         </div>
+        <div className="hidden lg:flex">
+          {status === "unauthenticated" && (
+            <Button
+              onClick={handleLoginClick}
+              variant={"outline"}
+              className=" justify-start gap-2"
+            >
+              <LogInIcon size={16} />
+              Fazer login
+            </Button>
+          )}
+          {status === "authenticated" && (
+            <Button
+              onClick={handleLogOutClick}
+              variant={"outline"}
+              className=" justify-start gap-2"
+            >
+              <LogOutIcon size={16} />
+              Fazer logout
+            </Button>
+          )}
+        </div>
       </Card>
       <Card className=" hidden w-full justify-between rounded-none bg-[#104A8E] px-10 py-5 font-[inter] lg:flex">
         <Link
@@ -219,9 +241,15 @@ const Header = () => {
           <ShoppingBagIcon color="white" />
         </Link>
 
-        <Link href={"/orders"}>
+        {status === "authenticated" && data?.user ? (
+          <Avatar>
+            <AvatarFallback>{data.user.name?.[0].toUpperCase()}</AvatarFallback>
+            {data.user.image && <AvatarImage src={data.user.image} />}
+          </Avatar>
+        ) : (
           <User2Icon color="white" />
-        </Link>
+        )}
+
         <Sheet>
           <SheetTrigger asChild>
             <ShoppingCartIcon color="white" />
