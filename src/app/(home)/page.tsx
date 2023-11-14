@@ -28,14 +28,15 @@ export default async function Home() {
     },
   });
   return (
-    <div className="py-8">
-      <PromoBanner
-        src={"/Top-Banner01.png"}
-        className="h-auto w-full px-5"
-        alt="Banner Inicial"
-      />
-
-      <div className="mt-8">
+    <div className="mx-auto flex flex-col gap-8 py-8 lg:container lg:gap-10">
+      <div className="mx-auto max-w-[1920px]">
+        <PromoBanner
+          src={"/Top-Banner01.png"}
+          className="hidden h-auto w-full lg:block"
+          alt="Banner Inicial"
+        />
+      </div>
+      <div className="mt-8 flex flex-col gap-3 lg:gap-5">
         <SectionTitle>Ofertas</SectionTitle>
 
         <ProductList products={deals} />
