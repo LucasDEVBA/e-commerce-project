@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Category {
-  id       String    @id @default(cuid())
+  id       String    @id @default(uuid())
   name     String
   slug     String
   imageUrl String
@@ -19,7 +19,7 @@ model Category {
 }
 
 model Product {
-  id                 String         @id @default(cuid())
+  id                 String         @id @default(uuid())
   name               String
   slug               String
   imageUrls          String[]
@@ -32,7 +32,7 @@ model Product {
 }
 
 model Order {
-  id            String         @id @default(cuid())
+  id            String         @id @default(uuid())
   userId        String
   user          User           @relation(fields: [userId], references: [id])
   orderProducts OrderProduct[]
@@ -58,7 +58,7 @@ model OrderProduct {
 }
 
 model Account {
-  id                String  @id @default(cuid())
+  id                String  @id @default(uuid())
   userId            String
   type              String
   provider          String
@@ -77,7 +77,7 @@ model Account {
 }
 
 model Session {
-  id           String   @id @default(cuid())
+  id           String   @id @default(uuid())
   sessionToken String   @unique
   userId       String
   expires      DateTime
@@ -85,7 +85,7 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String    @id @default(uuid())
   name          String?
   email         String?   @unique
   emailVerified DateTime?
