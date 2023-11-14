@@ -8,6 +8,7 @@ import {
   ListOrderedIcon,
   HomeIcon,
   LogOutIcon,
+  PackageSearchIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { signIn, useSession, signOut } from "next-auth/react";
@@ -86,6 +87,15 @@ const Header = () => {
               >
                 <HomeIcon size={16} />
                 Início
+              </Button>
+            </Link>{" "}
+            <Link href={"/orders"}>
+              <Button
+                variant={"outline"}
+                className="mt-4 w-full justify-start gap-2"
+              >
+                <PackageSearchIcon size={16} />
+                Meus Pedidos
               </Button>
             </Link>{" "}
             <Link href={"/deals"}>
