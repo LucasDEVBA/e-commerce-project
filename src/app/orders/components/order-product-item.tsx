@@ -13,7 +13,7 @@ const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
 
   return (
     <div className="flex items-center gap-4">
-      <div className="flex h-[80px] w-[80px] items-center justify-center rounded-lg bg-accent">
+      <div className="flex h-[80px] w-[100px] items-center justify-center gap-4 rounded-lg bg-accent">
         <Image
           src={orderProduct.product.imageUrls[0]}
           width={0}
@@ -24,7 +24,7 @@ const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
         />
       </div>
 
-      <div className="flex w-full flex-col gap-1">
+      <div className="flex w-full flex-col gap-1 py-2">
         <div className="flex w-fit justify-center rounded-md bg-accent px-3 py-1">
           <p className="text-[10px]">Retirada em Salvador</p>
         </div>
