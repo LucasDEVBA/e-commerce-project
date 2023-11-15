@@ -215,23 +215,32 @@ const Header = () => {
           )}
         </div>
       </Card>
-      <Card className=" hidden w-full justify-between rounded-none bg-[#104A8E] px-10 py-5 font-[inter] lg:flex">
+      <Card className=" hidden w-full items-center justify-between rounded-none bg-[#104A8E] px-10 py-3 font-[inter] lg:flex">
         <Link
           href={"/category/beautyFragrances"}
-          className="text-xl  text-white"
+          className="text-xl  text-white  hover:text-black"
         >
           Beleza e Fragrâncias
         </Link>
-        <Link href={"/category/wine"} className=" text-xl text-white">
+        <Link
+          href={"/category/wine"}
+          className=" text-xl text-white hover:text-black"
+        >
           Bebidas
         </Link>
-        <Link href={"/category/luxury"} className="text-xl  text-white">
+        <Link
+          href={"/category/luxury"}
+          className="text-xl  text-white  hover:text-black"
+        >
           Luxo
         </Link>
-        <Link href={"/category/edibles"} className="text-xl  text-white">
+        <Link
+          href={"/category/edibles"}
+          className="text-xl  text-white  hover:text-black"
+        >
           Comestíveis
         </Link>
-        <Link href={"/deals"} className="text-xl  text-white">
+        <Link href={"/deals"} className="text-xl  text-white  hover:text-black">
           Ofertas
         </Link>
 
