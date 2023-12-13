@@ -29,10 +29,10 @@ export default async function Home() {
   });
   return (
     <div className="mx-auto flex flex-col gap-8 py-8 lg:container lg:gap-10">
-      <div className="mx-auto max-w-[1920px]">
+      <div className="mx-4 max-w-[1920px] lg:mx-auto">
         <PromoBanner
           src={"/Top-Banner01.png"}
-          className="hidden h-auto w-full lg:block"
+          className="h-auto w-full lg:block"
           alt="Banner Inicial"
         />
       </div>
